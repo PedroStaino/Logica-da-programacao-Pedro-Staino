@@ -1,0 +1,19 @@
+Um branch é uma linha separada do código mas do mesmo repositório.
+O branch funciona como uma cópia exata do código em um determinado momento,
+permitindo que você faça modificações, adicione arquivos ou teste novas ideias
+sem alterar ou colocar em risco a versão original do projeto.
+Seu principal objetivo é o desenvolvimento seguro e alternado do código,
+ou seja, várias pessoas podem trabalhar no mesmo projeto simultaneamente
+sem que o código de uma interfira no trabalho da outra.
+E ele funciona também como um "boneco de teste", você pode errar,
+alterar, testar etc. o código só será alterado se um processo chamado MERGE aprovar.
+No dia a dia os branches são utilizados principalmente para correção de bugs no código,
+ex: seu site deu problema na area de login, ao invés de alterar o código todo,
+você pega o branch da área do login e corrige só ele.
+outro momento em que os branchs são utilizados é quando os desenvolvedores
+querem adicionar novas funcionalidades, ex: um app de banco quer adicionar o pix
+no seu sistema, a equipe cria um branch para o programador poder trabalhar
+exclusivamente nesse projeto, enquanto isso o aplicativo continua funcionando normalmente.
+outra situação é quando os programadores querem revisar o código sem perde-lo por completo.
+No geral, os branches são apenas meios de prevenção de erros e de atualizar o programa
+sem tirar-lo do ar.
