@@ -1,0 +1,209 @@
+programa
+{
+	funcao inicio()
+	{
+		inteiro vidaPlayer = 100
+		inteiro vidaLeviathan = 1500
+		inteiro kitMedico = 1
+		inteiro canhao = 3
+		inteiro blindagem = 3
+		inteiro vidaBarco = 1000
+		inteiro escolhaa
+		inteiro item
+		cadeia  armaS
+		cadeia espaco
+          cadeia tecla
+ 
+           
+		escreva("=== TESOURO PERDIDO ===\n")
+		escreva("\n\n")
+   		escreva("Você é um pirata que começou sua busca pelo tesouro nos mares \n")
+   		escreva("De repente você sente um tremor vindo do oceano \n")
+   		escreva("O seu barco treme e você percebe que está diante de um ameaça muito maior do que você poderia imaginar \n")
+   		escreva(" \n")
+   		escreva(" \n")
+   		escreva(" \n") 
+		escreva("Uma ameaça se aproxima..... \n")
+		escreva("\n\n")
+          escreva("Aperte qualquer tecla para começar \n")
+          leia(tecla)
+
+		enquanto (vidaPlayer > 0 e vidaLeviathan > 0 e vidaBarco > 0)
+		{
+			escreva("\n\n\n\n")
+			escreva("=====  O LEVIATHAN  =====")
+			escreva(" \n")	
+			escreva("\n==============================\n")
+			escreva("Vida do Barco: ", vidaBarco, "\n")
+			escreva("Sua vida: ", vidaPlayer, "\n")
+			escreva("Vida do Leviathan: ", vidaLeviathan, "\n")
+ 
+			escreva("\nEscolha sua acao:\n")
+			escreva("1 - Atacar    (-300 Leviathan)\n")
+			escreva("2 - Defender  (+30 vida)\n")
+			escreva("3 - Usar item (Mochila)\n")
+			leia(escolhaa)
+ 
+			se (escolhaa == 1)
+			{
+				escreva("\n\n\n")	
+				escreva("\nVoce atacou o Leviathan com sua espada! -300\n")
+				vidaLeviathan = vidaLeviathan - 300
+     			escreva(" \n")
+				escreva("O Leviathan criou uma onda gigante que atingiu seu navio!\n")
+				escreva(" - 20 vida  - 450 barco\n")
+				vidaPlayer = vidaPlayer - 20
+				vidaBarco = vidaBarco - 450
+			}
+ 
+			senao se (escolhaa == 2)
+			{
+				escreva("\n\n\n")
+				escreva("Voce se recuperou!\n")
+				escreva(" + 20 vida\n")
+				vidaPlayer = vidaPlayer + 20
+ 
+				se (vidaPlayer > 100)
+				{
+					vidaPlayer = 100
+				}
+			}
+ 
+			senao se (escolhaa == 3)
+			{
+				escreva("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")	
+				escreva("=====  MOCHILA  =====")
+				escreva("\n")
+				escreva("\nItens disponiveis:\n")
+				escreva("1 - Kit Medico (", kitMedico, ")          (+50 vida) \n")
+				escreva("2 - Canhao Naval (", canhao, ")           (-250 Leviathan\n")
+				escreva("3 - Blindagem do Navio (", blindagem, ")  (+350 navio)\n")
+ 
+				leia(item)
+ 
+				se (item == 1)
+				{
+					se (kitMedico > 0)
+					{
+						kitMedico = kitMedico - 1
+						vidaPlayer = vidaPlayer + 50
+						escreva(" \n")
+						escreva("Voce usou um Kit Medico!\n")
+					}
+					senao
+					{
+						escreva("  \n")
+						escreva("Kits Medicos esgotados!\n")
+					}
+				}
+ 
+				senao se (item == 2)
+				{
+					se (canhao > 0)
+					{
+						canhao = canhao - 1
+						vidaLeviathan = vidaLeviathan - 250
+      					escreva("\n")	
+						escreva("O Canhao atingiu o Leviathan! - 250\n")
+						escreva("Porém ele contra atacou com jatos de agua muito fortes\n")
+						escreva(" - 10 vida  - 100 barco\n")
+						vidaBarco = vidaBarco - 100
+						vidaPlayer = vidaPlayer - 10
+					}
+					senao
+					{
+						escreva("\n\n")
+						escreva("Canhoes esgotados!\n")
+					}
+				}
+ 
+				senao se (item == 3)
+				{
+					se (blindagem > 0)
+					{
+						blindagem = blindagem - 1
+						vidaBarco = vidaBarco + 350
+						escreva("\n\n")
+						escreva("Blindagem ativada!\n")
+						escreva("+350 de vida para o seu navio!\n")
+					}
+					senao
+					{
+						escreva("\n")
+						escreva("Blindagens esgotadas! se vira kkk \n")
+					}
+				}
+			}
+ 
+			senao
+			{
+				escreva("Opcao invalida!\n")
+			}
+		}
+ 
+			se (vidaPlayer <= 30)
+		{
+			escreva("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")	
+			escreva("  \n")
+			escreva(" ₰ ₤ ₭ ௹ ₴ ₵ ￥₰ ₤ ₭ ௹ ₴ ₵ ￥₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹ ₴ ₵ ￥ \n")
+			escreva("  \n")
+			escreva("  \n")
+			escreva("Você tem acesso a arma secreta...\n")
+			escreva("Fale a frase de invocação (hadjinspawn)\n")
+			leia(armaS)
+			escreva("  \n")
+			escreva(" ₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹ ₴ ₵ ￥₰ ₤ ₭ ௹ ₴ ₵  \n")
+ 
+			se (armaS == "hadjinspawn")
+			{
+				escreva("  \n")
+				escreva("  \n")
+				escreva("₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹  ￥ \n")
+				escreva("  \n")
+				escreva("Você agora tem possui a lendária arma ancestral Hadjin! \n")
+				escreva("Aperte a tecla (H) para ativar sua habilidade \n")
+				leia(espaco)	
+				escreva("  \n")
+				escreva("₰ ₤ ₭ ௹ ₴ ₵ ￥₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₭ ௹ ₴ ₵ ￥ \n")
+			     escreva("  \n")
+			     escreva(" \n")
+			//digite em maiusculo
+			se (espaco == "H")
+			{
+			vidaLeviathan = 0
+			}
+			}
+			senao
+			{
+			escreva("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")	
+			escreva("₰ ₤ ₭ ௹ ₴ ₵ ￥₰ ₤ ₭ ௹ ₴ ₵ ￥ ₰ ₤ ₰ ₤ ₭ ௹ ₴ ₵ ￥₰ \n")
+			escreva("   \n")
+			escreva(" \n")
+			escreva("Falou a frase errada!\n")
+			escreva("Você foi devorado pelo rei dos mares \n")
+			escreva("   \n")
+			escreva("  \n")
+			escreva("₰ ₤ ₭ ௹ ₴ ₰ ₤     FIM DE JOGO...     ₤ ₭ ௹ ₴ ₵ ￥\n")
+			escreva("  \n")
+               vidaPlayer = 0
+			}
+		}	
+ 
+		se (vidaLeviathan <= 0)
+		{
+			escreva(" \n")
+			escreva("VITORIA!\n")
+			escreva("Voce derrotou o Leviathan!\n")
+			escreva("   \n")
+			escreva("Você recebeu reforço no navio para conseguir seguir viagem!\n")
+			escreva(" + 500 de reforço naval para a próxima viagem!\n")
+		}
+		senao se (vidaPlayer <= 0 ou vidaBarco <= 0)
+		{
+			escreva(" \n")
+			escreva("FIM DE JOGO!\n")
+			escreva("O Leviathan destruiu sua embarcacao!\n")
+			escreva("Voce foi engolido pelas profundezas do oceano...\n")
+			}
+		}
+	}
