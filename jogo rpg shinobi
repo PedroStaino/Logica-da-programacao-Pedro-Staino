@@ -1,0 +1,214 @@
+programa
+{
+	inclua biblioteca Matematica
+	inclua biblioteca Calendario
+	inclua biblioteca Tipos
+	inclua biblioteca Texto
+	inclua biblioteca Util --> U
+	
+	cadeia nome 
+	inteiro vida = 100
+	inteiro ataque = 18
+	inteiro defesa = 8 
+	inteiro nivel = 1
+	inteiro xp = 0
+	
+	funcao inicio()
+	{
+		escreva("※※※※※※※※※※※※※※※※※※※※※※※※※※※\n")
+		escreva("    SHADOW OF SHINOBI      \n")
+		escreva("※※※※※※※※※※※※※※※※※※※※※※※※※※※\n\n")
+	     escreva("Digite o nome do seu ninja: ")
+	     leia(nome)
+
+	     nome = Texto.caixa_alta(nome)
+	   
+          escreva("\nBem-vindo, ", nome, ".\n")
+
+	     escreva("\nDurante anos você esteve treinando em terras distantes.\n")
+		escreva("Agora retorna para seu país...\n")
+		escreva("Mas encontra apenas destruição.\n\n")
+
+		escreva("O Imperador Negro conquistou todas as províncias.\n")
+		escreva("Seu antigo clã foi exterminado.\n")
+		escreva("Você é o último Shinobi.\n\n")
+
+		escreva("Sua missão é derrotar o Imperador e restaurar a paz.\n\n")
+          U.aguarde(7000)
+          menu()
+	}
+	funcao menu()
+	    {
+	    	inteiro opcao
+
+	    	faca
+	    {
+	    	escreva("\n============== MENU ==============\n")
+			escreva("1 - Ver Status\n")
+			escreva("2 - Explorar Floresta\n")
+			escreva("3 - Treinar\n")
+			escreva("4 - Descansar\n")
+			escreva("5 - Enfrentar o Imperador\n")
+			escreva("0 - Sair\n")
+
+			escreva("\nEscolha: ")
+			leia(opcao)
+
+			escolha(opcao)
+			{
+				caso 1:
+					status()
+				pare
+
+				caso 2:
+					floresta()
+				pare
+
+				caso 3:
+					treinar()
+				pare
+
+				caso 4:
+					descansar()
+				pare
+
+				caso 5:
+					imperador()
+				pare
+
+				caso 0:
+					escreva("\nAté a próxima, guerreiro.")
+				pare
+
+				caso contrario:
+					escreva("\nOpção inválida.")
+			}
+                  U.aguarde(2000)
+	    } enquanto(opcao != 0)
+	    }
+
+	    funcao status()
+	    { 
+	    	escreva("\n===== STATUS =====\n")
+		escreva("Nome: ", nome,"\n")
+		escreva("Vida: ",vida,"\n")
+		escreva("Ataque: ",ataque,"\n")
+		escreva("Defesa: ",defesa,"\n")
+		escreva("Nível: ",nivel,"\n")
+		escreva("XP: ",xp,"\n")
+	    }
+          funcao treinar()
+          {
+          	inteiro ganho
+
+          ganho = Util.sorteia(5, 15)
+
+          xp = xp + ganho
+          se(xp >= 30*nivel)
+          {
+          	nivel = nivel + 1
+			ataque = ataque + 8
+			defesa = defesa + 2
+			vida = vida + 20
+
+			escreva("\nVOCÊ SUBIU DE NÍVEL!\n")
+		}
+
+		escreva("\nTreino concluído.")
+		escreva("\nXP ganho: ",ganho,"\n")
+	}
+
+	funcao descansar()
+	{
+		vida = 100 + (nivel-1)*20
+
+		escreva("\nVocê descansou e recuperou sua energia.")
+	}
+      funcao floresta()
+	{
+	
+         inteiro inimigo
+         inteiro dano = 0
+
+         inimigo = Util.sorteia(1,3)
+    
+		escolha(inimigo)
+{
+    caso 1:
+        escreva("\nUm Bandido apareceu!\n")
+        dano = Util.sorteia(5,12)
+    pare
+
+    caso 2:
+        escreva("\nUm Samurai Corrompido apareceu!\n")
+        dano = Util.sorteia(10,18)
+    pare
+
+    caso 3:
+        escreva("\nUm Oni apareceu!\n")
+        dano = Util.sorteia(15,25)
+    pare
+}
+
+dano = dano - defesa
+
+se(dano < 0)
+{
+    dano = 0
+}
+
+vida = vida - dano
+
+		escreva("Você sofreu ",dano," de dano.\n")
+
+		se(vida <= 0)
+		{
+			escreva("\nVocê foi derrotado...\n")
+			vida = 100
+		}
+		senao
+		{
+			inteiro premio
+
+			premio = Util.sorteia(10,20)
+
+			xp = xp + premio
+
+			escreva("Você venceu a batalha!\n")
+			escreva("XP ganho: ",premio,"\n")
+		}
+	}
+
+				funcao imperador()
+	{
+		inteiro poder
+
+		poder = ataque + nivel*5 + Util.sorteia(1,20)
+
+		escreva("\nVocê invade o castelo...\n")
+		escreva("O Imperador saca sua espada.\n\n")
+
+				se(poder >= 70)
+		{
+			escreva("Após uma batalha épica...\n\n")
+			escreva("VOCÊ DERROTOU O IMPERADOR!\n")
+			escreva("O país finalmente voltou a viver em paz.\n\n")
+
+			escreva("=====================================\n")
+			escreva("             VITÓRIA!               \n")
+			escreva(" Você restaurou a paz no reino!     \n")
+			escreva(" Obrigado por jogar Shadow of Shinobi\n")
+			escreva("=====================================\n")
+
+			escreva("\nPressione ENTER para encerrar o jogo...")
+			leia(nome)
+
+		}
+	        senao
+			{
+			escreva("Você ainda não é forte o suficiente.\n")
+			escreva("Treine mais antes de retornar.\n")
+			}
+		
+	}
+}
