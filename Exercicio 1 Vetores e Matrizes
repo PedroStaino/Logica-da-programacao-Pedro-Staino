@@ -1,0 +1,18 @@
+programa
+{
+	funcao inicio()
+	{
+		inteiro vetor[5]
+		inteiro soma = 0
+		
+		para(inteiro i = 0; i < 5; i++)
+		{
+			escreva("Digite o ", i + 1, "º número: ")
+			leia(vetor[i])
+			
+			soma = soma + vetor[i]
+		}
+		
+		escreva("\nA soma dos números é: ", soma)
+	}
+}
